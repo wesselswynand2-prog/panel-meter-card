@@ -54,10 +54,8 @@ function fitNumber(val, digits, decimals) {
   if (val === null || isNaN(val)) return "-".repeat(digits);
   for (let d = decimals; d >= 0; d--) {
     const s = val.toFixed(d);
-    if (s.replace(/[.-]/g, "").length <= digits) {
-      const len = s.replace(".", "").length;
-      return " ".repeat(digits - len) + s;
-    }
+    const len = s.replace(".", "").length; // minus sign takes a digit position, like a real LCD
+    if (len <= digits) return " ".repeat(digits - len) + s;
   }
   return "E".padEnd(digits, "-").slice(0, digits);
 }
@@ -297,7 +295,7 @@ class PanelMeterCard extends HTMLElement {
   }
 }
 
-const PMC_VERSION = "1.1.0";
+const PMC_VERSION = "1.1.1";
 console.info(`%c PANEL-METER-CARD %c v${PMC_VERSION} `, "background:#1f63c6;color:#fff", "");
 if (!customElements.get("panel-meter-card")) customElements.define("panel-meter-card", PanelMeterCard);
 window.customCards = window.customCards || [];
