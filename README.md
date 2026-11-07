@@ -59,7 +59,11 @@ pages:
 
 | Option | Default | Description |
 |---|---|---|
-| `brand` | `METER` | Text in the red badge |
+| `logo` | `true` | Show the Hamlet Elektries logo at the top (`false` = text badge) |
+| `logo_color` | `#111111` | Logo colour |
+| `logo_url` | – | Use a different logo image instead, e.g. `/local/my-logo.png` |
+| `brand` | `METER` | Badge text when `logo: false` |
+| `accent_color` | `#1f63c6` | Colour of the buttons, dots and badge |
 | `model` | `PM 1` | Text under the badge |
 | `energy` | – | kWh sensor for the bottom counter |
 | `energy_label` / `energy_unit` | `IN` / `kWh` | Tag and unit next to the counter |
@@ -68,7 +72,7 @@ pages:
 | `auto_cycle` | `false` | Start with page cycling on |
 | `cycle_seconds` | `6` | Seconds per page when cycling |
 | `panel` | `true` | Orange panel background (`false` = plain card) |
-| `panel_color` | `#e8681f` | Panel background colour |
+| `panel_color` | `#1b4f9a` | Panel background colour |
 | `show_ir` | `true` | Show the IR port detail |
 
 **Per page:** `unit`, `max` (full scale for the bar graphs), `digits` (default 4), `decimals` (default 1), `cells` (up to 4).
